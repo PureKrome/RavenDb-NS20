@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- Ignore Nuget package downgrades for System.* packages since they will be trimmed out of the build anyway -->
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="RavenDb.Client" Version="3.5.4" />
+  </ItemGroup>
 </Project>
